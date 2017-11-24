@@ -37,6 +37,27 @@ class Solution{
           return head;
 
       }
+      Node* deleteFromHead(Node *head) {
+        Node* nextNode;
+
+        if (head) {
+          nextNode = head->next;
+          delete(head);
+          return nextNode;
+        }
+
+        return head;
+      }
+      
+      void deleteList( Node *head ) {
+        Node * nextNode;
+        while(head) {
+          nextNode = head->next;
+          delete(head);
+          head = nextNode;
+        }
+      }
+
       void display(Node *head)
       {
           Node *start=head;
