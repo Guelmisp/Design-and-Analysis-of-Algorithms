@@ -1,5 +1,8 @@
 // Functions
 
+// split string
+split( fields, input, is_any_of( " " ) );
+
 //is space in string
 isspace(str[i])
 
@@ -51,17 +54,18 @@ for(long int i = 0; i < n/2; i++){
 
 //STRUCTURES
 
-    //Stack
+//Hashmap
+std::map <char, int> map;
+map.insert(make_pair(str[i], i);
+map.size();
+!map[str[i]];
+//Stack
 stack <char> mystack;
 mystack.push();
 mystack.pop();
 mystack.top();
 mystack.empty();
-//Hashmap
-map <char, int> map;
-map.insert(make_pair(str[i], i);
-map.size();
-!map[str[i]];
+
 //Queue
 queue <int> q;
 q.push(int);
