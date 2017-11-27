@@ -3,6 +3,9 @@
 // split string
 split( fields, input, is_any_of( " " ) );
 
+//string to int (throws exception)
+int value = stoi(s);=
+
 //is space in string
 isspace(str[i])
 
@@ -22,6 +25,14 @@ result  = is_pangram(input_string);
 vector<int> ar(n);
 for(int ar_i = 0; ar_i < n; ar_i++){
     cin >> ar[ar_i];
+}
+
+//input matrix
+vector< vector<int> > a(n,vector<int>(n));
+for(int a_i = 0;a_i < n;a_i++){
+    for(int a_j = 0;a_j < n;a_j++){
+      cin >> a[a_i][a_j];
+}
 }
 
 //sorting vector
@@ -50,7 +61,7 @@ for(long int i = 0; i < n/2; i++){
         
         ar[x] = ar[x] + "-" + " ";
         
-    }
+}
 
 //STRUCTURES
 
@@ -59,6 +70,7 @@ std::map <char, int> map;
 map.insert(make_pair(str[i], i);
 map.size();
 !map[str[i]];
+
 //Stack
 stack <char> mystack;
 mystack.push();
@@ -72,6 +84,7 @@ q.push(int);
 q.size();
 q.front();
 q.back();
+
 //List
 list <int> list1;
 list1.front();
@@ -81,24 +94,5 @@ list1.pop_back();
 list1.reverse();
 list1.sort();
 
-class Line {
-   public:
-      void setLength( double len );
-      double getLength( void );
-      Line();  // This is the constructor
-   private:
-      double length;
-};
- 
-// Member functions definitions including constructor
-Line::Line(void) {
-   cout << "Object is being created" << endl;
-}
-void Line::setLength( double len ) {
-   length = len;
-}
-double Line::getLength( void ) {
-   return length;
-}
 
 
