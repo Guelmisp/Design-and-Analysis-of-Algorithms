@@ -1,5 +1,9 @@
 // Functions
 
+
+//count if
+int positives = count_if(array.begin(), array.end(), [](int n){return n > 0;});
+
 // split string
 split( fields, input, is_any_of( " " ) );
 
@@ -83,6 +87,7 @@ queue <int> q;
 q.push(int);
 q.size();
 q.front();
+q.pop();
 q.back();
 
 //List
