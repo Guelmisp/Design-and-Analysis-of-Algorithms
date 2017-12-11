@@ -1,8 +1,9 @@
 // Functions
 
 
-//count if
+//vector functions
 int positives = count_if(array.begin(), array.end(), [](int n){return n > 0;});
+find(v.begin(), v.end(), head->data) == v.end(); //not found
 
 // split string
 split( fields, input, is_any_of( " " ) );
@@ -69,9 +70,14 @@ for(long int i = 0; i < n/2; i++){
 
 //STRUCTURES
 
+//set
+Set<Integer> set =new HashSet<Integer>();
+set.add(prevNode.data);
+set.contains(n.data);
+
 //Hashmap
 std::map <char, int> map;
-map.insert(make_pair(str[i], i);
+map.insert(make_pair(str[i], i));
 map.size();
 !map[str[i]];
 
@@ -99,5 +105,21 @@ list1.pop_back();
 list1.reverse();
 list1.sort();
 
+//template
+template <class T> void printArray (vector<T> a) {
+  int size = a.size();
+  for(int i = 0; i < size; i++) {
+      cout << a[i] << endl;
+  }
+}meu
+
+//prime
+bool primeOrNotPrime(int n) {
+  for (int i = 2; i <= sqrt(n); i++) {
+      if (n % i == 0)
+          return false;
+  }   
+  return true;    
+}
 
 
