@@ -45,9 +45,9 @@ long binarySearchRecursive(vector <int> array, long left, long right, int key) {
             return middle;
         
         if (array[middle] > key)
-            return binarySearchRecursive(array, middle+1, right, key);
-        else
-            return binarySearchRecursive(array, left, middle+1, key);
+            return binarySearchRecursive(array, left, middle-1, key);
+        
+        return binarySearchRecursive(array, middle+1, right, key);
     }
     
     return -1;

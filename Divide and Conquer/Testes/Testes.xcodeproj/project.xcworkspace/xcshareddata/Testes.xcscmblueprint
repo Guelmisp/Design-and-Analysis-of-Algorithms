@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "04B10AEFFBCB83A4FEF2B2D7A5819E0AB272D4D6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "04B10AEFFBCB83A4FEF2B2D7A5819E0AB272D4D6" : 9223372036854775807,
+    "1E36E6C47250E7B5C3B56A8034E7E64A8543C029" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E301D658-746B-4B85-9082-38F8E3A1D477",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "04B10AEFFBCB83A4FEF2B2D7A5819E0AB272D4D6" : "PAA\/",
+    "1E36E6C47250E7B5C3B56A8034E7E64A8543C029" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Testes",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Divide and Conquer\/Testes\/Testes.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Guelmisp\/Design-and-Analysis-of-Algorithms.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "04B10AEFFBCB83A4FEF2B2D7A5819E0AB272D4D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Guelmisp\/TensorFlow-ImageRecognition.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E36E6C47250E7B5C3B56A8034E7E64A8543C029"
+    }
+  ]
+}
