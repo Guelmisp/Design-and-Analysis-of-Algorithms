@@ -1,5 +1,7 @@
 // Functions
-
+#include <algorithm>
+std::max('a','z');
+std::max_element(max.begin(), max.end());
 
 //vector functions
 int positives = count_if(array.begin(), array.end(), [](int n){return n > 0;});
@@ -54,18 +56,6 @@ void showlist(list <int> g){
     for(it = g.begin(); it != g.end(); ++it)
         cout << '\t' << *it;
     cout << '\n';
-}
-
-//sorting
-for(long int i = 0; i < n/2; i++){
-        int x;
-        cin >> x;
-        
-        string s;
-        cin >> s;
-        
-        ar[x] = ar[x] + "-" + " ";
-        
 }
 
 //STRUCTURES

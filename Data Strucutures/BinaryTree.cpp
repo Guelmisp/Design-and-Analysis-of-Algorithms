@@ -10,61 +10,66 @@ using namespace std;
 class Node {
 public:
     int data;
-    int size = 0;
+    int smallerThan = 0;
     Node *left;
     Node *right;
     
-    Node(int d){
+    Node(int d, int s){
         data=d;
+        smallerThan = s;
         left=NULL;
         right=NULL;
     }
 };
 
-class Operations{
+class Tree{
 public:
     
-    Node* insert(Node *node, int data){
+    Node* buildTree(vector<int> arr){
         
-        if (node == NULL ) return new Node(data);
+        sort(arr.begin(), arr.end());
         
-        if (data < node -> data)
-            node -> left = insert(node->left, data);
-        else
-            node -> right = insert(node->right, data);
+        return buildTree(arr, 0, arr.size()-1);
         
-        node -> size += 1;
-        return node;
     }
     
+    Node* buildTree(vector<int> arr, int start, int end){
+        if (end < start)
+            return NULL;
+        
+        int midPoint = (start + end)/2;
+        Node *root = new Node(arr[midPoint], midPoint);
+        
+        root->left = buildTree(arr, start, midPoint - 1);
+        root->right = buildTree(arr, midPoint + 1, end);
+        
+        return root;
+        
+    }
+    
+    int search(Node *root, int data) {
+        
+        //if (root == NULL || root->data == data)
+        //    return root;
+        
+        //return (data < root->data ) ? search(root->left, data) : search(root->right, data);
+        
+        if (root->data == data)
+            return root->smallerThan;
+        
+        if (data < root->data )
+            return (root->left != NULL) ? search(root->left, data) : root->smallerThan+1;
+        else
+            return (root->right != NULL) ? search(root->right, data) : root->smallerThan+1;
+    }
     
     void inorder(Node *root)
     {
         if (root != NULL)
         {
             inorder(root->left);
-            cout << "Data: " << root -> data << " Size: " << root->size << endl;
+            cout << "Data: " << root -> data << " SL: " << root->smallerThan << endl;
             inorder(root->right);
-        }
-    }
-    
-    void search(Node *root, int data) {
-    
-        if (root->data == data) {
-            cout << root->size << " "; return;
-        }
-        
-        if (root->data < data) {
-            if (root->right != NULL)
-                return search(root->right, data);
-            else
-                cout << root->size-1 << " "; return;
-        
-        } else {
-            if (root->left != NULL)
-                return search(root->left, data);
-            else
-                cout << root->size-1 << " "; return;
         }
     }
     
@@ -72,29 +77,30 @@ public:
 
 int main() {
     Node* head=NULL;
-    Operations btree;
+    Tree tree;
     
     int numberofQueries, numberofElements;
     cin >> numberofQueries >> numberofElements;
     
     vector<int> queries (numberofQueries);
+    vector<int> arr (numberofElements);
     
-    for(int i = 0 ; i < numberofQueries; i++){
+    for(int i = 0 ; i < numberofQueries; i++)
         cin >> queries[i];
-    }
     
-    for(int i = 0 ; i < numberofElements; i++){
-        int value;
-        cin >> value;
-        head = btree.insert(head, value);
-    }
+    for(int i = 0 ; i < numberofElements; i++)
+        cin >> arr[i];
     
-    btree.inorder(head);
+    head = tree.buildTree(arr);
+    
+    
+    tree.inorder(head);
     
     cout << "Result: " << endl;
     
-    for (int i = 0; i < numberofQueries; i++) {
-        btree.search(head, queries[i]);
-    }
+    for (int i = 0; i < numberofQueries; i++)
+        cout << tree.search(head, queries[i]) << " ";
+    
+    
     
 }
