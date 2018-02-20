@@ -7,6 +7,15 @@ std::max_element(max.begin(), max.end());
 int positives = count_if(array.begin(), array.end(), [](int n){return n > 0;});
 find(v.begin(), v.end(), head->data) == v.end(); //not found
 
+// lower_bound and upper_bound
+std::vector<int>::iterator low,up;
+int valuetoSearch = 20;
+low=std::lower_bound (v.begin(), v.end(), valuetoSearch);
+
+std::map<char,int>::iterator itlow,itup;
+itlow=mymap.lower_bound ('b');  // itlow points to b
+itup=mymap.upper_bound ('d');
+
 // split string
 split( fields, input, is_any_of( " " ) );
 
