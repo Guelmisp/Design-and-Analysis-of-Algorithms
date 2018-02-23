@@ -18,6 +18,9 @@ itup=mymap.upper_bound ('d');
 
 // split string
 split( fields, input, is_any_of( " " ) );
+std::string str2 = str.substr (3,5);     // "think"
+std::size_t pos = str.find("live");      // position of "live" in str
+std::string str3 = str.substr (pos);     // get from "live" to the end
 
 //string to int (throws exception)
 int value = stoi(s);=
@@ -110,7 +113,7 @@ template <class T> void printArray (vector<T> a) {
   for(int i = 0; i < size; i++) {
       cout << a[i] << endl;
   }
-}meu
+}
 
 //prime
 bool primeOrNotPrime(int n) {
