@@ -1,15 +1,18 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
 class Node {
 public:
     int key;
+    int size;
     Node* right;
     Node* left;
     
     Node(int k) {
+        size = 0;
         key = k;
         right = NULL;
         left =  NULL;
@@ -30,6 +33,7 @@ public:
             root->right = insert(root->right, key);
         }
         
+        root->size = updateSize(root);
         return root;
         
     }
@@ -51,11 +55,46 @@ public:
         return root->right == NULL ? root : getMax(root->right);
     }
     
+    int size(Node* root) {
+        return root == NULL ? 0 : root->size;
+    }
+    
+    int updateSize(Node* root) {
+        return size(root->left) + size(root->right) + 1;
+    };
+    
+    void depthFirst(Node *root) {
+        if (root != NULL)
+        {
+            cout << "Key: " << root->key << " Size: " << root->size << endl;
+            inorder(root->left);
+            inorder(root->right);
+        }
+    }
+    
+    void breadthFirst(Node *root){
+        if (root == NULL) return;
+        queue<Node*> queue;
+        queue.push(root);
+        
+        while (!queue.empty()) {
+            Node *p = queue.front();
+            cout << p->key << " ";
+            queue.pop();
+            
+            if (p->left != NULL)
+                queue.push(p->left);
+            if (p->right != NULL)
+                queue.push(p->right);
+        }
+        cout << endl;
+    }
+    
     void inorder(Node *root) {
         if (root != NULL)
         {
             inorder(root->left);
-            cout << "Key: " << root -> key << endl;
+            cout << "Key: " << root->key << " Size: " << root->size << endl;
             inorder(root->right);
         }
     }
@@ -66,13 +105,14 @@ int main() {
     BST bst;
     vector<int> arr = {8, 3, 10, 1, 6, 14, 4, 7, 13};
     
-    for (int& i : arr){
-        root = bst.insert(root, i);
+    for (int& arr_i : arr){
+        root = bst.insert(root, arr_i);
     }
     
     cout << bst.find(root, 10) << endl;
     cout << bst.find(root, 44) << endl;
     
+    bst.breadthFirst(root);
     bst.inorder(root);
     
     
